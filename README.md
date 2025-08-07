@@ -40,6 +40,18 @@ delta/
 
 ## Installation
 
+This database uses uv for package management. Please install uv from [here](https://docs.astral.sh/uv/getting-started/installation/), or use the following commands:
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+or
+
+```bash
+pip install uv
+```
+
 1.  **Clone the repository:**
     ```bash
     git clone <repository-url>
