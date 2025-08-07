@@ -1,0 +1,165 @@
+AutoDock-GPU version: v1.6-7-ga46ab564d2ac5f1a1523f65239b43505a1c29364-dirty
+
+Using 1 OpenMP threads
+
+Running 3 docking calculations
+
+Cuda device:                              NVIDIA A100-SXM4-40GB
+Available memory on device:               39916 MB (total: 40339 MB)
+
+CUDA Setup time 0.231125s
+(Thread 0 is setting up Job #1)
+
+Running Job #1:
+    Device: NVIDIA A100-SXM4-40GB
+    Grid map file: ./protein.maps.fld
+    Ligand file: ./ligand_1_1.pdbqt
+    Output file: docking_result_1.dlg (+ xml)
+    Using heuristics: (capped) number of evaluations set to 2280181
+    Local-search chosen method is: ADADELTA (ad)
+
+Rest of Setup time 0.308448s
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 2280181 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |   -0.45 kcal/mol |   -1.50 +/-    0.29 kcal/mol |      53 |   -3.02 kcal/mol
+          5 |       115217 |   -1.41 kcal/mol |   -5.56 +/-    1.87 kcal/mol |     905 |  -13.71 kcal/mol
+         10 |       233687 |   -5.53 kcal/mol |  -10.98 +/-    1.25 kcal/mol |      28 |  -13.77 kcal/mol
+         15 |       356518 |  -10.31 kcal/mol |  -13.87 +/-    0.38 kcal/mol |       7 |  -14.29 kcal/mol
+         20 |       481003 |  -13.05 kcal/mol |  -14.16 +/-    0.75 kcal/mol |       4 |  -15.07 kcal/mol
+         25 |       605859 |  -11.34 kcal/mol |  -14.14 +/-    0.94 kcal/mol |       6 |  -15.62 kcal/mol
+         30 |       733405 |  -11.79 kcal/mol |  -14.87 +/-    0.70 kcal/mol |       7 |  -15.62 kcal/mol
+         35 |       861514 |  -13.37 kcal/mol |  -15.16 +/-    0.40 kcal/mol |       5 |  -15.62 kcal/mol
+         40 |       989679 |  -13.96 kcal/mol |  -15.29 +/-    0.40 kcal/mol |       6 |  -15.81 kcal/mol
+         45 |      1115781 |  -14.30 kcal/mol |  -15.36 +/-    0.47 kcal/mol |       4 |  -15.83 kcal/mol
+         50 |      1243404 |  -13.61 kcal/mol |  -15.18 +/-    0.32 kcal/mol |       6 |  -15.84 kcal/mol
+         55 |      1372267 |  -14.37 kcal/mol |  -15.63 +/-    0.14 kcal/mol |       5 |  -15.84 kcal/mol
+         60 |      1498256 |  -15.21 kcal/mol |  -15.74 +/-    0.10 kcal/mol |       2 |  -15.84 kcal/mol
+         65 |      1623794 |  -14.98 kcal/mol |  -15.56 +/-    0.31 kcal/mol |       3 |  -15.84 kcal/mol
+         70 |      1750779 |  -14.01 kcal/mol |  -15.27 +/-    0.40 kcal/mol |       9 |  -15.84 kcal/mol
+         75 |      1878878 |  -14.60 kcal/mol |  -15.61 +/-    0.14 kcal/mol |       6 |  -15.84 kcal/mol
+         80 |      2007140 |  -15.25 kcal/mol |  -15.90 +/-    0.11 kcal/mol |       7 |  -15.99 kcal/mol
+         85 |      2135866 |  -15.67 kcal/mol |  -15.81 +/-    0.11 kcal/mol |       8 |  -15.99 kcal/mol
+         90 |      2264298 |  -15.60 kcal/mol |  -15.83 +/-    0.13 kcal/mol |       7 |  -15.99 kcal/mol
+         91 |      2290183 |  -15.55 kcal/mol |  -15.79 +/-    0.14 kcal/mol |      17 |  -15.99 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                       2290183 evaluations. Best inter + intra   -15.99 kcal/mol.
+
+
+Shutdown time 0.000696s
+
+Job #1 took 1.388 sec after waiting 4.461 sec for setup
+
+(Thread 0 is processing Job #1)
+(Thread 0 is setting up Job #2)
+
+Running Job #2:
+    Device: NVIDIA A100-SXM4-40GB
+    Grid map file: ./protein.maps.fld
+    Ligand file: ./ligand_2_2.pdbqt
+    Output file: docking_result_2.dlg (+ xml)
+    Using heuristics: (capped) number of evaluations set to 4195460
+    Overriding heuristics, setting number of evaluations to --nev = 2500000 instead.
+    Warning: The set number of evals is 38.75% of the uncapped heuristics estimate of 6450800 evals.
+             This means this docking may not be able to converge. Increasing --heurmax may improve
+             convergence but will also increase runtime.
+             AutoStop will not stop before 17.33% (433129) of the set number of evaluations.
+    Local-search chosen method is: ADADELTA (ad)
+
+Rest of Setup time 0.302308s
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 2500000 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |   -0.92 kcal/mol |   -2.13 +/-    0.42 kcal/mol |      11 |   -3.28 kcal/mol
+          5 |       133089 |   -1.56 kcal/mol |   -6.54 +/-    1.96 kcal/mol |    1162 |  -13.91 kcal/mol
+         10 |       265711 |   -6.51 kcal/mol |  -11.51 +/-    0.89 kcal/mol |      37 |  -13.96 kcal/mol
+         15 |       402534 |  -11.15 kcal/mol |  -13.60 +/-    0.25 kcal/mol |       6 |  -13.96 kcal/mol
+         20 |       538709 |  -12.97 kcal/mol |  -13.80 +/-    0.30 kcal/mol |       7 |  -14.52 kcal/mol
+         25 |       674170 |  -13.15 kcal/mol |  -14.10 +/-    0.29 kcal/mol |       4 |  -14.52 kcal/mol
+         30 |       813044 |  -13.02 kcal/mol |  -13.99 +/-    0.32 kcal/mol |      11 |  -14.52 kcal/mol
+         35 |       949172 |  -13.56 kcal/mol |  -14.32 +/-    0.14 kcal/mol |       6 |  -14.52 kcal/mol
+         40 |      1085698 |  -13.97 kcal/mol |  -14.68 +/-    0.09 kcal/mol |       4 |  -14.77 kcal/mol
+         45 |      1223041 |  -14.33 kcal/mol |  -14.71 +/-    0.17 kcal/mol |       6 |  -15.00 kcal/mol
+         50 |      1358404 |  -14.28 kcal/mol |  -14.74 +/-    0.14 kcal/mol |       6 |  -15.00 kcal/mol
+         55 |      1495476 |  -14.38 kcal/mol |  -14.79 +/-    0.14 kcal/mol |       8 |  -15.00 kcal/mol
+         60 |      1631487 |  -14.54 kcal/mol |  -14.88 +/-    0.16 kcal/mol |       9 |  -15.15 kcal/mol
+         65 |      1769877 |  -14.61 kcal/mol |  -14.99 +/-    0.12 kcal/mol |       4 |  -15.15 kcal/mol
+         70 |      1906956 |  -14.52 kcal/mol |  -15.06 +/-    0.15 kcal/mol |       5 |  -15.20 kcal/mol
+         75 |      2043385 |  -14.61 kcal/mol |  -15.14 +/-    0.25 kcal/mol |       7 |  -15.72 kcal/mol
+         80 |      2181380 |  -14.61 kcal/mol |  -15.46 +/-    0.30 kcal/mol |       7 |  -15.83 kcal/mol
+         85 |      2319536 |  -14.82 kcal/mol |  -15.58 +/-    0.27 kcal/mol |       5 |  -15.83 kcal/mol
+         90 |      2458099 |  -14.77 kcal/mol |  -15.76 +/-    0.09 kcal/mol |       4 |  -15.91 kcal/mol
+         92 |      2514861 |  -15.43 kcal/mol |  -15.76 +/-    0.09 kcal/mol |       8 |  -15.91 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                       2514861 evaluations. Best inter + intra   -15.91 kcal/mol.
+
+
+Shutdown time 0.000671s
+
+Job #2 took 1.612 sec after waiting 0.052 sec for setup
+
+(Thread 0 is processing Job #2)
+(Thread 0 is setting up Job #3)
+
+Running Job #3:
+    Device: NVIDIA A100-SXM4-40GB
+    Grid map file: ./protein.maps.fld
+    Ligand file: ./ligand_3_3.pdbqt
+    Output file: docking_result_3.dlg (+ xml)
+    Using heuristics: (capped) number of evaluations set to 3487417
+    Overriding heuristics, setting number of evaluations to --nev = 2500000 instead.
+    Local-search chosen method is: ADADELTA (ad)
+
+Rest of Setup time 0.306027s
+
+Executing docking runs, stopping automatically after either reaching 0.15 kcal/mol standard deviation of
+the best molecules of the last 4 * 5 generations, 42000 generations, or 2500000 evaluations:
+
+Generations |  Evaluations |     Threshold    |  Average energy of best 10%  | Samples | Best Inter + Intra
+------------+--------------+------------------+------------------------------+---------+-------------------
+          0 |          150 |   -1.60 kcal/mol |   -2.36 +/-    0.26 kcal/mol |       7 |   -2.85 kcal/mol
+          5 |       139192 |   -1.81 kcal/mol |   -5.50 +/-    1.86 kcal/mol |    1180 |  -12.09 kcal/mol
+         10 |       274402 |   -5.48 kcal/mol |  -10.23 +/-    0.95 kcal/mol |      46 |  -12.58 kcal/mol
+         15 |       409796 |   -9.93 kcal/mol |  -13.03 +/-    0.81 kcal/mol |       7 |  -14.22 kcal/mol
+         20 |       546152 |  -11.31 kcal/mol |  -13.55 +/-    0.50 kcal/mol |       6 |  -14.46 kcal/mol
+         25 |       682890 |  -12.31 kcal/mol |  -13.91 +/-    0.42 kcal/mol |       4 |  -14.55 kcal/mol
+         30 |       820790 |  -12.33 kcal/mol |  -13.98 +/-    0.53 kcal/mol |       6 |  -14.55 kcal/mol
+         35 |       959409 |  -12.66 kcal/mol |  -14.38 +/-    0.36 kcal/mol |       4 |  -14.89 kcal/mol
+         40 |      1097474 |  -13.03 kcal/mol |  -14.60 +/-    0.18 kcal/mol |       4 |  -14.89 kcal/mol
+         45 |      1232908 |  -13.93 kcal/mol |  -14.36 +/-    0.39 kcal/mol |       4 |  -14.89 kcal/mol
+         50 |      1369035 |  -12.91 kcal/mol |  -14.49 +/-    0.39 kcal/mol |       5 |  -14.89 kcal/mol
+         55 |      1505464 |  -13.33 kcal/mol |  -14.66 +/-    0.25 kcal/mol |       4 |  -14.89 kcal/mol
+         60 |      1638203 |  -13.71 kcal/mol |  -14.68 +/-    0.19 kcal/mol |       6 |  -14.89 kcal/mol
+         65 |      1773034 |  -14.22 kcal/mol |  -14.77 +/-    0.15 kcal/mol |       3 |  -14.94 kcal/mol
+         70 |      1908094 |  -14.01 kcal/mol |  -14.71 +/-    0.14 kcal/mol |       5 |  -14.94 kcal/mol
+         75 |      2042473 |  -14.29 kcal/mol |  -14.71 +/-    0.18 kcal/mol |       4 |  -14.96 kcal/mol
+         80 |      2176142 |  -14.04 kcal/mol |  -14.77 +/-    0.27 kcal/mol |       7 |  -15.34 kcal/mol
+         85 |      2312134 |  -14.18 kcal/mol |  -15.06 +/-    0.29 kcal/mol |       5 |  -15.39 kcal/mol
+         90 |      2446088 |  -14.20 kcal/mol |  -14.86 +/-    0.31 kcal/mol |       5 |  -15.42 kcal/mol
+         93 |      2525553 |  -13.92 kcal/mol |  -14.95 +/-    0.28 kcal/mol |       9 |  -15.42 kcal/mol
+------------+--------------+------------------+------------------------------+---------+-------------------
+
+                                   Finished evaluation after reaching
+                       2525553 evaluations. Best inter + intra   -15.42 kcal/mol.
+
+
+Shutdown time 0.000747s
+
+Job #3 took 1.350 sec after waiting 0.064 sec for setup
+
+(Thread 0 is processing Job #3)
+Run time of entire job set (3 files): 8.972 sec
+Savings from multithreading: -0.000 sec
+Idle time of execution thread: 4.621 sec
+
+All jobs (3) ran without errors.
