@@ -247,6 +247,8 @@ If you use this work in your research, please cite:
 
 -   **AlphaFold Database**: David, A., Islam, S., Tankhilevich, E., & Sternberg, M. J. (2022). The AlphaFold database of protein structures: a biologist’s guide. Journal of molecular biology, 434(2), 167336.
 
+-   **PaperQA**: Lála, J., et al. (2023). PaperQA: Retrieval-Augmented Generative Agent for Scientific Research. arXiv preprint arXiv:2312.07559. https://arxiv.org/abs/2312.07559
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 
