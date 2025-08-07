@@ -1,8 +1,8 @@
-# DELTA: AI-Powered Scientific Research Platform
+# An Auditable Agent Platform For Automated Molecular Optimisation
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![arXiv](https://img.shields.io/badge/arXiv-2508.03444-b31b1b.svg)](https://arxiv.org/abs/2508.03444)
 
-DELTA is a multi-agent platform designed for AI-driven scientific research, with a strong focus on computational drug discovery. It empowers teams of specialized AI agents to collaborate on complex scientific workflows, from literature review to molecular docking and analysis.
+Drug discovery frequently loses momentum when data, expertise, and tools are scattered, slowing design cycles. To shorten this loop we built a hierarchical, tool using agent framework that automates molecular optimisation. A Principal Researcher defines each objective, a Database agent retrieves target information, an AI Expert generates de novo scaffolds with a sequence to molecule deep learning model, a Medicinal Chemist edits them while invoking a docking tool, a Ranking agent scores the candidates, and a Scientific Critic polices the logic. Each tool call is summarised and stored causing the full reasoning path to remain inspectable. The agents communicate through concise provenance records that capture molecular lineage, to build auditable, molecule centered reasoning trajectories and reuse successful transformations via in context learning. Three cycle research loops were run against AKT1 protein using five large language models. After ranking the models by mean docking score, we ran 20 independent scale ups on the two top performers. We then compared the leading LLMs' binding affinity results across three configurations, LLM only, single agent, and multi agent. Our results reveal an architectural trade off, the multi agent setting excelled at focused binding optimization, improving average predicted binding affinity by 31%. In contrast, single agent runs generated molecules with superior drug like properties at the cost of less potent binding scores. Unguided LLM runs finished fastest, yet their lack of transparent tool signals left the validity of their reasoning paths unverified. These results show that test time scaling, focused feedback loops and provenance convert general purpose LLMs into auditable systems for molecular design, and suggest that extending the toolset to ADMET and selectivity predictors could push research workflows further along the discovery pipeline.
 
 ## Features
 
@@ -213,21 +213,39 @@ The platform comes with a variety of pre-built tools for scientific research:
 
 For more details on each tool's parameters, please refer to the `input_schema` in `src/tools/tool_definitions.py`.
 
+## Citation
+
+If you use this work in your research, please cite:
+
+```bibtex
+@misc{ünlü2025auditableagentplatformautomated,
+      title={An Auditable Agent Platform For Automated Molecular Optimisation}, 
+      author={Atabey Ünlü and Phil Rohr and Ahmet Celebi},
+      year={2025},
+      eprint={2508.03444},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2508.03444}, 
+}
+```
+
 ## References
 
 -   **Prot2Mol**: Ünlü, A., Çevrim, E., & Doğan, T. (2024). *Prot2Mol: Target based molecule generation using protein embeddings and SELFIES molecule representation*. GitHub Repository. [https://github.com/HUBioDataLab/Prot2Mol](https://github.com/HUBioDataLab/Prot2Mol)
 
--   **PaperQA**: Lála, J., et al. (2023). PaperQA: Retrieval-Augmented Generative Agent for Scientific Research. *arXiv preprint arXiv:2312.07559*. [https://arxiv.org/abs/2312.07559](https://arxiv.org/abs/2312.07559)
-
--   **Simple and Effective Masked Diffusion Language Models**: Sahoo, S. S., et al. (2024). Simple and Effective Masked Diffusion Language Models. *arXiv:2406.07524*. [https://arxiv.org/abs/2406.07524](https://arxiv.org/abs/2406.07524)
-
 -   **AutoDock-GPU**: The AutoDock-GPU developers. *AutoDock-GPU*. GitHub Repository. [https://github.com/ccsb-scripps/AutoDock-GPU](https://github.com/ccsb-scripps/AutoDock-GPU)
-
--   **DiffDock**: Corso, G., et al. (2024). Deep Confident Steps to New Pockets: Strategies for Docking Generalization. *International Conference on Learning Representations (ICLR)*.
 
 -   **PLIP**: Adasme, M., et al. (2021). PLIP 2021: expanding the scope of the protein-ligand interaction profiler to DNA and RNA. *Nucleic Acids Research*, gkab294. [https://doi.org/10.1093/nar/gkab294](https://doi.org/10.1093/nar/gkab294)
 
 -   **plipinteractor**: Olgaç, A. *plipinteractor*. GitHub Repository. [https://github.com/aolgac/plipinteractor](https://github.com/aolgac/plipinteractor)
+
+-   **ChEMBL**: Zdrazil, B. (2025). Fifteen years of ChEMBL and its role in cheminformatics and drug discovery. Journal of Cheminformatics, 17(1), 1-9. 
+
+-   **UniProt**: Zaru, R., Orchard, S., & UniProt Consortium. (2023). UniProt tools: BLAST, align, peptide search, and ID mapping. Current protocols, 3(3), e697.
+
+-   **PDB**: Burley, S. K., Bhatt, R., Bhikadiya, C., Bi, C., Biester, A., Biswas, P., ... & Zardecki, C. (2025). Updated resources for exploring experimentally-determined PDB structures and Computed Structure Models at the RCSB Protein Data Bank. Nucleic acids research, 53(D1), D564-D574.
+
+-   **AlphaFold Database**: David, A., Islam, S., Tankhilevich, E., & Sternberg, M. J. (2022). The AlphaFold database of protein structures: a biologist’s guide. Journal of molecular biology, 434(2), 167336.
 
 ## License
 
