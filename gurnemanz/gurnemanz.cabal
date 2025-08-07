@@ -1,0 +1,147 @@
+name:                gurnemanz
+version:             0.1.0.0
+build-type:          Simple
+cabal-version:       >=1.10
+
+
+library
+    exposed-modules:     Common.Types
+                      , Core.Base
+                      , Core.Error
+                      , Core.Lazy
+                      , Core.Monad
+                      , Core.Types
+                      , Domain.Base.Types
+                      , Domain.Base.Property
+                      , Domain.Base.Graph
+                      , Domain.Base.Graph.Types
+                      , Domain.Molecule.Types
+                      , Domain.Property.Types
+                      , Domain.Session.Types
+                      , Domain.Session.Interpreter
+                      , Domain.Transform.Types
+                      , Domain.Transform.Operations
+                      , Infrastructure.Config.Types
+                      , Infrastructure.Config.Loader
+                      , Infrastructure.Config.Environment
+                      , Infrastructure.Persistence.JSON
+                      , Infrastructure.Persistence.Logging
+                      , Infrastructure.Persistence.Logging.Console
+                      , Infrastructure.API.Socket
+                      , Infrastructure.API.Session
+                      , App.Types
+                      , App.Env
+    hs-source-dirs:      src
+    build-depends:       base >= 4.7 && < 5
+                      , mtl
+                      , containers
+                      , vector
+                      , aeson >= 2.2.3.0
+                      , text
+                      , transformers
+                      , unordered-containers
+                      , yaml
+                      , uuid >= 1.3.16
+                      , time
+                      , bytestring
+                      , scientific
+                      , lens
+                      , async
+                      , stm
+                      , exceptions
+                      , unliftio
+                      , base64-bytestring
+                      , deepseq
+                      , network
+                      , directory
+                      , uuid-types
+
+    default-language:    Haskell2010
+    default-extensions:  OverloadedStrings
+                      , DeriveGeneric
+                      , DerivingStrategies
+                      , DeriveAnyClass
+                      , LambdaCase
+                      , FlexibleContexts
+                      , MultiParamTypeClasses
+                      , UndecidableInstances
+    ghc-options:         -Wall -O2
+
+executable gurnemanz
+    main-is:             App/Main.hs
+    hs-source-dirs:      src
+    other-modules:       Common.Types
+                      , App.Env
+                      , App.Types
+                      , Core.Base
+                      , Core.Error
+                      , Core.Lazy
+                      , Core.Monad
+                      , Core.Types
+                      , Domain.Base.Graph
+                      , Domain.Base.Graph.Types
+                      , Domain.Base.Property
+                      , Domain.Base.Types
+                      , Domain.Molecule.Types
+                      , Domain.Session.Types
+                      , Domain.Session.Interpreter
+                      , Domain.Transform.Operations
+                      , Domain.Transform.Types
+                      , Infrastructure.Config.Environment
+                      , Infrastructure.Config.Loader
+                      , Infrastructure.Config.Types
+                      , Infrastructure.Persistence.Logging
+                      , Infrastructure.Persistence.Logging.Console
+                      , Infrastructure.API.Socket
+                      , Infrastructure.API.Session
+    build-depends:       base >= 4.7 && < 5
+                      , gurnemanz
+                      , mtl
+                      , text
+                      , uuid >= 1.3.16
+                      , transformers
+                      , aeson >= 2.2.3.0
+                      , time
+                      , bytestring
+                      , containers
+                      , yaml
+                      , vector
+                      , unordered-containers
+                      , scientific
+                      , lens
+                      , async
+                      , stm
+                      , exceptions
+                      , unliftio
+                      , base64-bytestring
+                      , deepseq
+                      , network
+                      , directory
+                      , uuid-types
+                      
+    default-language:    Haskell2010
+    default-extensions:  OverloadedStrings
+                      , DeriveGeneric
+                      , DerivingStrategies
+                      , DeriveAnyClass
+                      , LambdaCase
+                      , FlexibleContexts
+                      , MultiParamTypeClasses
+                      , UndecidableInstances
+    ghc-options:         -Wall -O2 -threaded -rtsopts -with-rtsopts=-N
+
+test-suite gurnemanz-test
+    type:                exitcode-stdio-1.0
+    main-is:            Spec.hs
+    hs-source-dirs:     test
+    build-depends:      base
+                      , gurnemanz
+                      , hspec
+                      , QuickCheck
+                      , containers
+                      , text
+                      , mtl
+                      , uuid >= 1.3.16
+                      , aeson >= 2.2.3.0
+    ghc-options:        -threaded -rtsopts -with-rtsopts=-N
+    default-language:   Haskell2010

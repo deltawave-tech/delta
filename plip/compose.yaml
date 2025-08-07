@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  plip-api:
+    build: .
+    volumes:
+      - ./storage:/storage
+      - .:/src
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/src
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

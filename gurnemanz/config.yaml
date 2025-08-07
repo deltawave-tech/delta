@@ -1,0 +1,25 @@
+environment: Development
+
+chemConfig:
+    maxMoleculeSize: 1000
+    maxTransformationSteps: 50
+    computationTimeout: 300
+    enabledProperties:
+        - logP
+        - topology
+        - molecular_weight
+        - rotatable_bonds
+
+apiConfig:
+    apiPort: 8080
+    apiHost: 0.0.0.0
+    apiMaxRequestSize: 10485760
+    apiRateLimit: 100
+    apiTimeout: 30
+    socketPath: "/tmp/gurnemanz.sock"
+
+logConfig:
+    logLevel: Info
+    logFile: app.log
+    logFormat: json
+    enableConsoleLog: true

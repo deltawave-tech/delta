@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "multi-agent-paper"
+version = "0.1.0"
+description = "DELTA: AI-Powered Scientific Research Platform"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Multi-Agent Research Team" },
+]
+requires-python = ">=3.11"
+dependencies = [
+    # Core dependencies
+    "torch",
+    "torchvision", 
+    "sentencepiece",
+    "admet_ai",
+    "ratelimit",
+    "requests_cache",
+    "gradio",
+    "google-generativeai>=0.3.0",
+    "rdkit>=2023.3.1",
+    
+    # Agent and LLM dependencies
+    "anthropic",
+    "litellm",
+    "python-dotenv",
+    "pydantic>=2.0",
+    "transformers",
+    
+    # API and web dependencies
+    "requests",
+    "fastapi>=0.100.0", 
+    "uvicorn>=0.20.0",
+    "python-multipart>=0.0.5",
+    "beautifulsoup4",
+    
+    # Scientific computing
+    "numpy>=1.21.0,<2.0",
+    "pandas>=2.0.0",
+    "lxml",
+    "openbabel-wheel",
+    "selfies",
+    "fcd_torch",
+    
+    # Async support
+    "nest-asyncio",
+    
+    # Local editable packages
+    "paperqa",
+    "plip",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "black",
+    "isort",
+    "mypy",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+# Editable path dependencies
+[tool.uv.sources]
+paperqa = { path = "./paperqa_temp", editable = true }
+plip = { path = "./plip", editable = true }

@@ -1,0 +1,38 @@
+services:
+    autodock-api-refactor:
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        image: autodock-gpu-api:refactor
+        deploy:
+            resources:
+                limits:
+                    memory: 16G
+                reservations:
+                    devices:
+                        - driver: nvidia
+                          count: 1
+                          capabilities: [gpu]
+        environment:
+            - NVIDIA_VISIBLE_DEVICES=0
+            - CUDA_VISIBLE_DEVICES=0
+            - PYTHONPATH=/opt/conda/lib/python3.9/site-packages:/app
+            - PATH=/opt/conda/bin:$PATH
+            - PYTHON_VERSION=3.9
+            - OMP_NUM_THREADS=1
+            - MKL_NUM_THREADS=1
+            - OPENBLAS_NUM_THREADS=1
+            - LC_ALL=C.UTF-8
+            - LANG=C.UTF-8
+        volumes:
+            - ./app:/app
+            - /dev/shm:/dev/shm
+        shm_size: "8gb"
+        ports:
+            - "8686:8686"
+        restart: always
+        healthcheck:
+            test: ["CMD", "curl", "-f", "http://localhost:8686/ping"]
+            interval: 30s
+            timeout: 10s
+            retries: 3
