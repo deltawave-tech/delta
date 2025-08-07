@@ -20,7 +20,7 @@ Drug discovery frequently loses momentum when data, expertise, and tools are sca
 ## Repository Structure
 
 ```
-multi_agent_paper/
+delta/
 ├── src/
 │   ├── agent.py              # Core Agent class definition
 │   ├── demo/                 # Example pipelines and scripts
@@ -43,7 +43,7 @@ multi_agent_paper/
 1.  **Clone the repository:**
     ```bash
     git clone <repository-url>
-    cd multi_agent_paper
+    cd delta
     ```
 
 2.  **Install dependencies using uv:**
